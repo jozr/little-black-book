@@ -9,6 +9,12 @@ describe Contact do
     test_contact = Contact.new 'Jane Doe'
     test_contact.should be_an_instance_of Contact
   end
+
+  describe '.all' do
+    it 'starts as an empty array' do
+      Contact.all.should eq []
+    end
+  end
 end
 
 describe Address do

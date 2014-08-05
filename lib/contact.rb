@@ -4,6 +4,10 @@ require 'phone'
 
 class Contact
 
+  def Contact.all
+    []
+  end
+
   def initialize(contact_input)
     @name = name
   end
