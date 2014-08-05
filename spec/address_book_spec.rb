@@ -35,6 +35,12 @@ describe Email do
     test_email = Email.new 'janedoe@gmail.com'
     test_email.should be_an_instance_of Email
   end
+
+  describe '.all' do
+    it 'starts as an empty array' do
+      Email.all.should eq []
+    end
+  end
 end
 
 describe Phone do
