@@ -72,13 +72,23 @@ describe Contact do
     test_contact.emails.should eq [test_email, test_email_two]
   end
 
-    it 'adds a phone number to a contact' do
+  it 'adds a phone number to a contact' do
     test_contact = Contact.new 'Jane Doe'
     test_contact.save
     test_phone = Phone.new '503-333-3333', '222'
     test_phone.save
     test_contact.add_phone(test_phone)
     test_contact.phones.should eq [test_phone]
+  end
+
+  it 'adds multiple phone numbers' do
+    test_contact = Contact.new 'John Doe'
+    test_contact.save
+    test_phone = Phone.new '313-123-5678', '123'
+    test_phone_two = Phone.new '313-123-5678', '124'
+    test_contact.add_phone(test_phone)
+    test_contact.add_phone(test_phone_two)
+    test_contact.phones.should eq [test_phone, test_phone_two]
   end
 end
 
