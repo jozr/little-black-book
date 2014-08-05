@@ -38,4 +38,8 @@ class Address
   def zip
     @zip
   end
+
+  def edit_street(edited_street)
+    @street = edited_street
+  end
 end

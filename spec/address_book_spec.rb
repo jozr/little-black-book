@@ -61,6 +61,14 @@ describe Contact do
     test_contact.addresses.should eq [test_address, test_address_two]
   end
 
+  it 'allows user to edit the street in a contact address' do
+    test_contact = Contact.new 'Jane Doe'
+    test_contact.save
+    test_address = Address.new '123 Maine St.', 'Pleasantville', 'Oregon', '98656'
+    test_address.edit_street '234 Main St.'
+    test_address.street.should eq '234 Main St.'
+  end
+
   it 'adds an email address to a contact' do
     test_contact = Contact.new 'Jane Doe'
     test_contact.save
