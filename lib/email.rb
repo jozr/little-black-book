@@ -1,7 +1,3 @@
-require 'contact'
-require 'address'
-require 'phone'
-
 class Email
   @@all_emails = []
 

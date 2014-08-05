@@ -30,7 +30,7 @@ describe Contact do
   end
 
   it 'allows users to delete a contact' do
-    test_contact = Contact.new 'Quinn'
+    test_contact = Contact.new 'Cher Noble'
     test_contact.save
     test_contact.delete
     Contact.all.should eq []
