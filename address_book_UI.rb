@@ -56,7 +56,10 @@ require './lib/phone.rb'
     puts "What contact would you like to view?"
     Contact.all.each do |looplord|
       puts looplord.name
-      user_input = gets.chomp
+    end
+
+    user_input = gets.chomp
+    Contact.all.each do |looplord|
       if looplord == user_input
         puts looplord.name
       end
