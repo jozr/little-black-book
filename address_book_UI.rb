@@ -49,17 +49,16 @@ require './lib/phone.rb'
         input_zip = gets.chomp
         Address.new(input_street, input_city, input_state, input_zip).save
       end
-      break
     end
+  end
 
-    def view_contact
-      puts "What contact would you like to view?"
-      Contact.all.each do |looplord|
+  def view_contact
+    puts "What contact would you like to view?"
+    Contact.all.each do |looplord|
+      puts looplord.name
+      user_input = gets.chomp
+      if looplord == user_input
         puts looplord.name
-        user_input = gets.chomp
-        if looplord == user_input
-          puts 'looplord'
-        end
       end
     end
   end
