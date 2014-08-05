@@ -33,6 +33,15 @@ describe Contact do
       Contact.all.should eq [test_contact]
     end
   end
+
+  it 'adds an address to a contact' do
+    test_contact = Contact.new 'Jane Doe'
+    test_contact.save
+    test_address = Address.new '123 Main St.', 'Pleasantville', 'Oregon', '97102'
+    test_address.save
+    test_contact.add_address(test_address)
+    test_contact.addresses.should eq [test_address]
+  end
 end
 
 
@@ -42,7 +51,7 @@ describe Address do
   end
 
   it 'is initialized with an address' do
-    test_address = Address.new '123 Main St.'
+    test_address = Address.new '123 Main St.', 'Pleasantville', 'Oregon', '97102'
     test_address.should be_an_instance_of Address
   end
 
@@ -60,7 +69,7 @@ describe Address do
 
   describe 'save' do
     it 'adds an address to the array of addresses' do
-      test_address = Address.new '123 Main St.'
+      test_address = Address.new '123 Main St.', 'Pleasantville', 'Oregon', '97102'
       test_address.save
       Address.all.should eq [test_address]
     end

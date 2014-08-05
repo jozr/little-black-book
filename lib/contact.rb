@@ -19,10 +19,20 @@ class Contact
 
   def initialize(contact_input)
     @name = name
+    @addresses = []
+    @emails = []
+    @phones = []
+  end
+
+  def add_address(address_object)
+    @addresses << address_object
+  end
+
+  def addresses
+    @addresses
   end
 
   def name
     @name
   end
-
 end
