@@ -25,7 +25,16 @@ describe Contact do
       Contact.clear.should eq []
     end
   end
+
+  describe 'save' do
+    it 'adds a contact to the array of contacts' do
+      test_contact = Contact.new 'Jane Doe'
+      test_contact.save
+      Contact.all.should eq [test_contact]
+    end
+  end
 end
+
 
 describe Address do
   before do
@@ -46,6 +55,14 @@ describe Address do
   describe '.clear' do
     it 'clears all addresses' do
       Address.clear.should eq []
+    end
+  end
+
+  describe 'save' do
+    it 'adds an address to the array of addresses' do
+      test_address = Address.new '123 Main St.'
+      test_address.save
+      Address.all.should eq [test_address]
     end
   end
 end
@@ -71,6 +88,14 @@ describe Email do
       Email.clear.should eq []
     end
   end
+
+  describe 'save' do
+    it 'adds an email to the array of emails' do
+      test_email = Email.new 'janedoe@gmail.com'
+      test_email.save
+      Email.all.should eq [test_email]
+    end
+  end
 end
 
 describe Phone do
@@ -92,6 +117,14 @@ describe Phone do
   describe '.clear' do
     it 'clears all phone numbers' do
       Phone.clear.should eq []
+    end
+  end
+
+  describe 'save' do
+    it 'adds a phone number to the array of phone numbers' do
+      test_phone = Phone.new '123-456-7891'
+      test_phone.save
+      Phone.all.should eq [test_phone]
     end
   end
 end

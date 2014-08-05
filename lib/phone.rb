@@ -13,6 +13,10 @@ class Phone
     @@all_phones = []
   end
 
+  def save
+    @@all_phones << self
+  end
+
   def initialize(phone_input)
     @phone_input = phone_input
   end

@@ -13,6 +13,10 @@ class Email
     @@all_emails = []
   end
 
+  def save
+    @@all_emails << self
+  end
+
   def initialize(email_input)
     @email_input = email_input
   end
