@@ -109,9 +109,14 @@ end
 
   it 'allows user to delete the street in a contact address' do
     test_address = Address.new '123 Maine St.', 'Pleasantville', 'Oregon', '98656'
-    test_address.save
     test_address.delete_street
     test_address.street.should eq []
+  end
+
+  it 'allows user to delete a city in the contact address' do
+    test_address = Address.new '123 Maine St.', 'Pleasantville', 'Oregon', '98656'
+    test_address.delete_city
+    test_address.city.should eq []
   end
 
   it 'adds an email address to a contact' do

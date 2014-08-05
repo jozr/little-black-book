@@ -58,4 +58,8 @@ class Address
   def delete_street
     @street = []
   end
+
+  def delete_city
+    @city = []
+  end
 end
