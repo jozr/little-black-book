@@ -48,5 +48,11 @@ describe Phone do
     test_phone = Phone.new '503-333-3333'
     test_phone.should be_an_instance_of Phone
   end
+
+  describe '.all' do
+    it 'starts as an empty array' do
+      Phone.all.should eq []
+    end
+  end
 end
 
