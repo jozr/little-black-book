@@ -4,7 +4,7 @@ require 'phone'
 
 class Contact
 
-  def initialize(name)
+  def initialize(contact_input)
     @name = name
   end
 
