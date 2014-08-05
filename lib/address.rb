@@ -62,4 +62,12 @@ class Address
   def delete_city
     @city = []
   end
+
+  def delete_state
+    @state = []
+  end
+
+  def delete_zip
+    @zip = []
+  end
 end

@@ -119,6 +119,18 @@ end
     test_address.city.should eq []
   end
 
+  it 'allows user to delete a state in the contact address' do
+    test_address = Address.new '123 Maine St.', 'Pleasantville', 'Oregon', '98656'
+    test_address.delete_state
+    test_address.state.should eq []
+  end
+
+  it 'allows user to delete a zip code in the contact address' do
+    test_address = Address.new '123 Maine St.', 'Pleasantville', 'Oregon', '98656'
+    test_address.delete_zip
+    test_address.zip.should eq []
+  end
+
   it 'adds an email address to a contact' do
     test_contact = Contact.new 'Jane Doe'
     test_contact.save
