@@ -22,6 +22,12 @@ describe Address do
     test_address = Address.new '123 Main St.'
     test_address.should be_an_instance_of Address
   end
+
+  describe '.all' do
+    it 'starts as an empty array' do
+      Address.all.should eq []
+    end
+  end
 end
 
 describe Email do

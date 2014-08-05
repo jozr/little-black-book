@@ -3,9 +3,10 @@ require 'email'
 require 'phone'
 
 class Contact
+  @@all_contacts = []
 
   def Contact.all
-    []
+    @@all_contacts
   end
 
   def initialize(contact_input)
