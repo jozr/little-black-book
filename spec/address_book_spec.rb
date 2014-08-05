@@ -51,6 +51,15 @@ describe Contact do
     test_contact.add_email(test_email)
     test_contact.emails.should eq [test_email]
   end
+
+    it 'adds a phone number to a contact' do
+    test_contact = Contact.new 'Jane Doe'
+    test_contact.save
+    test_phone = Phone.new '503-333-3333', '222'
+    test_phone.save
+    test_contact.add_phone(test_phone)
+    test_contact.phones.should eq [test_phone]
+  end
 end
 
 
@@ -122,7 +131,7 @@ describe Phone do
   end
 
   it 'is initialized with a name' do
-    test_phone = Phone.new '503-333-3333'
+    test_phone = Phone.new '503-333-3333', '123'
     test_phone.should be_an_instance_of Phone
   end
 
@@ -140,7 +149,7 @@ describe Phone do
 
   describe 'save' do
     it 'adds a phone number to the array of phone numbers' do
-      test_phone = Phone.new '123-456-7891'
+      test_phone = Phone.new '123-456-7891', '123'
       test_phone.save
       Phone.all.should eq [test_phone]
     end

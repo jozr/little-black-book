@@ -32,12 +32,20 @@ class Contact
     @emails << email_object
   end
 
+  def add_phone(phone_object)
+    @phones << phone_object
+  end
+
   def addresses
     @addresses
   end
 
   def emails
     @emails
+  end
+
+  def phones
+    @phones
   end
 
   def name

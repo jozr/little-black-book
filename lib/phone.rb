@@ -17,11 +17,15 @@ class Phone
     @@all_phones << self
   end
 
-  def initialize(phone_input)
-    @phone_input = phone_input
+  def initialize(phone_number, extension)
+    @phone_number = phone_number
   end
 
-  def phone_input
-    @phone_input
+  def phone_number
+    @phone_number
+  end
+
+  def extension
+    @extension
   end
 end
