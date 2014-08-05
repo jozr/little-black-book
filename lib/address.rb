@@ -9,6 +9,10 @@ class Address
     @@all_addresses
   end
 
+  def Address.clear
+    @@all_addresses = []
+  end
+
   def initialize(address_input)
     @address = address
   end

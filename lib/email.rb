@@ -9,6 +9,10 @@ class Email
     @@all_emails
   end
 
+  def Email.clear
+    @@all_emails = []
+  end
+
   def initialize(email_input)
     @email_input = email_input
   end

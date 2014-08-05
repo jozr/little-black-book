@@ -9,6 +9,10 @@ class Phone
     @@all_phones
   end
 
+  def Phone.clear
+    @@all_phones = []
+  end
+
   def initialize(phone_input)
     @phone_input = phone_input
   end

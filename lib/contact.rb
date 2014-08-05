@@ -9,6 +9,10 @@ class Contact
     @@all_contacts
   end
 
+  def Contact.clear
+    @@all_contacts = []
+  end
+
   def initialize(contact_input)
     @name = name
   end
