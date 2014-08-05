@@ -43,6 +43,16 @@ describe Contact do
     test_contact.addresses.should eq [test_address]
   end
 
+  it 'adds multiple addresses' do
+    test_contact = Contact.new 'John Doe'
+    test_contact.save
+    test_address = Address.new '123 Main St.', 'Pleasantville', 'Oregon', '97102'
+    test_address_two = Address.new '123 Main St.', 'Pleasantville', 'Oregon', '12345'
+    test_contact.add_address(test_address)
+    test_contact.add_address(test_address_two)
+    test_contact.addresses.should eq [test_address, test_address_two]
+  end
+
   it 'adds an email address to a contact' do
     test_contact = Contact.new 'Jane Doe'
     test_contact.save
