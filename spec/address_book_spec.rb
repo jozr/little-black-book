@@ -24,6 +24,7 @@ describe Contact do
 
   it 'allows users to edit contact name' do
     test_contact = Contact.new 'Jane Doe'
+    test_contact.save
     test_contact.edit_name 'Jane Auschwitz'
     test_contact.name.should eq 'Jane Auschwitz'
   end
@@ -34,6 +35,14 @@ describe Contact do
     test_contact.delete
     Contact.all.should eq []
   end
+
+describe '.search' do
+  it 'allows user to search for a specific contact' do
+    test_contact = Contact.new 'Sharon Needles'
+    test_contact.save
+    Contact.search('Sharon Needles').should eq test_contact
+  end
+end
 
   describe '.all' do
     it 'starts as an empty array' do

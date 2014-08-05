@@ -13,11 +13,20 @@ class Contact
     @@all_contacts = []
   end
 
+  def Contact.search(search_name)
+    Contact.all.each do |contact|
+      if search_name == contact.name
+       @result = contact
+      end
+    end
+    return @result
+  end
+
   def save
     @@all_contacts << self
   end
 
-  def initialize(contact_input)
+  def initialize(name)
     @name = name
     @addresses = []
     @emails = []
