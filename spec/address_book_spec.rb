@@ -14,6 +14,14 @@ describe Contact do
     test_contact.should be_an_instance_of Contact
   end
 
+  it 'allows users to add multiple contacts' do
+    new_contact = Contact.new 'John Doe'
+    new_contact.save
+    new_contact_two = Contact.new 'Jane Doe'
+    new_contact_two.save
+    Contact.all.should eq [new_contact, new_contact_two]
+  end
+
   describe '.all' do
     it 'starts as an empty array' do
       Contact.all.should eq []
