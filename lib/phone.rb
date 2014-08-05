@@ -32,4 +32,9 @@ class Phone
   def edit_phone_number(edited_phone_number)
     @phone_number = edited_phone_number
   end
+
+  def edit_extension(edited_extension)
+    @extension = edited_extension
+  end
+
 end

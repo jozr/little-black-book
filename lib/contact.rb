@@ -51,4 +51,14 @@ class Contact
   def name
     @name
   end
+
+  def edit_name(edited_name)
+    @name = edited_name
+  end
+
+  def delete
+    Contact.all.delete_if do |individual|
+      self == individual
+    end
+  end
 end

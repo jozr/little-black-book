@@ -22,6 +22,19 @@ describe Contact do
     Contact.all.should eq [new_contact, new_contact_two]
   end
 
+  it 'allows users to edit contact name' do
+    test_contact = Contact.new 'Jane Doe'
+    test_contact.edit_name 'Jane Auschwitz'
+    test_contact.name.should eq 'Jane Auschwitz'
+  end
+
+  it 'allows users to delete a contact' do
+    test_contact = Contact.new 'Quinn'
+    test_contact.save
+    test_contact.delete
+    Contact.all.should eq []
+  end
+
   describe '.all' do
     it 'starts as an empty array' do
       Contact.all.should eq []
@@ -123,6 +136,12 @@ describe Contact do
     test_phone = Phone.new '503-333-3333', '333'
     test_phone.edit_phone_number '504-444-4444'
     test_phone.phone_number.should eq '504-444-4444'
+  end
+
+  it 'allows user to edit a phone extension' do
+    test_phone = Phone.new '503-333-3333', '333'
+    test_phone.edit_extension '124'
+    test_phone.extension.should eq '124'
   end
 
   it 'adds multiple phone numbers' do
