@@ -28,4 +28,8 @@ class Phone
   def extension
     @extension
   end
+
+  def edit_phone_number(edited_phone_number)
+    @phone_number = edited_phone_number
+  end
 end

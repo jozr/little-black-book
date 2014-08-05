@@ -119,6 +119,12 @@ describe Contact do
     test_contact.phones.should eq [test_phone]
   end
 
+  it 'allows user to edit a contact phone number' do
+    test_phone = Phone.new '503-333-3333', '333'
+    test_phone.edit_phone_number '504-444-4444'
+    test_phone.phone_number.should eq '504-444-4444'
+  end
+
   it 'adds multiple phone numbers' do
     test_contact = Contact.new 'John Doe'
     test_contact.save
