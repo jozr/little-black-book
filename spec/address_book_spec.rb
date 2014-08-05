@@ -62,11 +62,27 @@ describe Contact do
   end
 
   it 'allows user to edit the street in a contact address' do
-    test_contact = Contact.new 'Jane Doe'
-    test_contact.save
     test_address = Address.new '123 Maine St.', 'Pleasantville', 'Oregon', '98656'
     test_address.edit_street '234 Main St.'
     test_address.street.should eq '234 Main St.'
+  end
+
+  it 'allows user to edit the city in a contact address' do
+    test_address = Address.new '123 Maine St.', 'Pleasantville', 'Oregon', '98656'
+    test_address.edit_city 'Boring'
+    test_address.city.should eq 'Boring'
+  end
+
+  it 'allows user to edit the state in a contact address' do
+    test_address = Address.new '123 Maine St.', 'Pleasantville', 'Oregon', '98656'
+    test_address.edit_state 'Washington'
+    test_address.state.should eq 'Washington'
+  end
+
+  it 'allows user to edit the zip code in a contact address' do
+    test_address = Address.new '123 Maine St.', 'Pleasantville', 'Oregon', '98656'
+    test_address.edit_zip '48124'
+    test_address.zip.should eq '48124'
   end
 
   it 'adds an email address to a contact' do
@@ -76,6 +92,12 @@ describe Contact do
     test_email.save
     test_contact.add_email(test_email)
     test_contact.emails.should eq [test_email]
+  end
+
+  it 'allows user to edit a contact email' do
+    test_email = Email.new 'janedoe@gmail.com'
+    test_email.edit_email 'janedoe@aol.com'
+    test_email.email_input.should eq 'janedoe@aol.com'
   end
 
   it 'adds multiple emails' do

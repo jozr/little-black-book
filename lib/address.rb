@@ -42,4 +42,16 @@ class Address
   def edit_street(edited_street)
     @street = edited_street
   end
+
+  def edit_city(edited_city)
+    @city = edited_city
+  end
+
+  def edit_state(edited_state)
+    @state = edited_state
+  end
+
+  def edit_zip(edited_zip)
+    @zip = edited_zip
+  end
 end

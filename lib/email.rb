@@ -25,4 +25,7 @@ class Email
     @email_input
   end
 
+  def edit_email(edited_email)
+    @email_input = edited_email
+  end
 end
