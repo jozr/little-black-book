@@ -146,6 +146,12 @@ end
     test_email.email_input.should eq 'janedoe@aol.com'
   end
 
+  it 'allows user to delete an email address' do
+    test_email = Email.new 'chernoble@fun.com'
+    test_email.delete_email
+    test_email.email_input.should eq []
+  end
+
   it 'adds multiple emails' do
     test_contact = Contact.new 'John Doe'
     test_contact.save
@@ -175,6 +181,18 @@ end
     test_phone = Phone.new '503-333-3333', '333'
     test_phone.edit_extension '124'
     test_phone.extension.should eq '124'
+  end
+
+  it 'allows user to delete a phone number' do
+    test_phone = Phone.new '313-666-6660', '616'
+    test_phone.delete_number
+    test_phone.phone_number.should eq []
+  end
+
+  it 'allows user to delete an extension' do
+    test_phone = Phone.new '313-666-6660', '666'
+    test_phone.delete_extension
+    test_phone.extension.should eq []
   end
 
   it 'adds multiple phone numbers' do

@@ -33,8 +33,16 @@ class Phone
     @phone_number = edited_phone_number
   end
 
+  def delete_number
+    @phone_number = []
+  end
+
   def edit_extension(edited_extension)
     @extension = edited_extension
+  end
+
+  def delete_extension
+    @extension = []
   end
 
 end
