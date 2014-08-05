@@ -54,4 +54,8 @@ class Address
   def edit_zip(edited_zip)
     @zip = edited_zip
   end
+
+  def delete_street
+    @street = []
+  end
 end
