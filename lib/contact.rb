@@ -28,8 +28,16 @@ class Contact
     @addresses << address_object
   end
 
+  def add_email(email_object)
+    @emails << email_object
+  end
+
   def addresses
     @addresses
+  end
+
+  def emails
+    @emails
   end
 
   def name

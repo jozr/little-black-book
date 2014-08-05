@@ -42,6 +42,15 @@ describe Contact do
     test_contact.add_address(test_address)
     test_contact.addresses.should eq [test_address]
   end
+
+  it 'adds an email address to a contact' do
+    test_contact = Contact.new 'Jane Doe'
+    test_contact.save
+    test_email = Email.new 'janedoe@gmail.com'
+    test_email.save
+    test_contact.add_email(test_email)
+    test_contact.emails.should eq [test_email]
+  end
 end
 
 
